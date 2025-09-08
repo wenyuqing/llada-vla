@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+  <title>ROSA: Harnessing Robot States for Vision-Language
+    and Action Alignment</title>
+  
+  <meta name="author" content="Yuqing Wen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="lamp.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="icon" type="image/png" href="assests/logo.png">
+</head>
+
+<body style="width: 100%;">
+
+<div style="background-color: white; margin-right: auto; margin-left: auto; ">
+
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+
+        <!-- <img src="assests/logo6.png"  style="position: relative; left: 0em; top: 0.3em; width: 10%;"> -->
+        <h1> <font style="color: rgb(255, 141, 160);">ROSA</font>: Harnessing <font style="color: rgb(255, 141, 160);">Ro</font>bot <font style="color: rgb(255, 141, 160);">S</font>tates for Vision-Language
+            and Action <font style="color: rgb(255, 141, 160);">A</font>lignment</h1>
+        <!-- <br> -->
+        <p style="font-size: 18px; color: black;">
+            Yuqing Wen<sup>1*</sup>, &nbsp;&nbsp;
+            Kefan Gu<sup>2*</sup>, &nbsp;&nbsp;
+            Haoxuan Liu<sup>3*</sup>, &nbsp;&nbsp;
+            Yucheng Zhao<sup>3&dagger;</sup>, &nbsp;&nbsp;
+            Tiancai Wang<sup>3</sup>, &nbsp;&nbsp;
+            Haoqiang Fan<sup>3</sup> &nbsp;&nbsp;
+            Xiaoyan Sun<sup>1&Dagger;</sup>, &nbsp;&nbsp;
+
+        </p>
+        <p style="font-size: 16px; color: black;">
+            <sup>1</sup>University of Science and Technology of China, &nbsp;&nbsp;
+            <sup>2</sup>Nanjing University, &nbsp;&nbsp;
+            <sup>3</sup>Dexmal
+        </p>
+        <p style="font-size: 16px; color: black;">
+            <sup>*</sup>This work was done during the internship at Dexmal. &nbsp;&nbsp;
+            <sup>&dagger;</sup>Project lead.&nbsp;&nbsp;
+            <sup>&Dagger;</sup>Corresponding Author.
+        </p>
+
+        <span class="link-button">
+            <a class="link-button-content", href="https://arxiv.org/abs/2506.13679">
+                <span>
+                    <svg class="svg-inline--fa fa-file-pdf fa-w-12" style="position: relative; top: 0.15em;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg>
+                </span>
+                &nbsp;
+                Paper
+            </a>
+        <span class="link-button">
+            <a class="link-button-content" href="https://github.com/wenyuqing/rosa", target="_blank">
+                <span>
+                    <svg class="svg-inline--fa fa-file-pdf" aria-hidden="true" version="1.1" viewBox="0 0 16 16" width="1.2em" style="position: relative; top: 0.25em;"><path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                </span>
+                &nbsp; 
+                Github Repo
+            </a>
+        </span>
+        <span class="link-button">
+            <a class="link-button-content", href="#bib">
+                <span>
+                    <svg class="svg-inline--fa fa-file-pdf" aria-hidden="true" style="position: relative; top: 0.15em;" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16"> <path fill="currentColor" fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" fill="white"></path> <path fill="currentColor" fill-rule="evenodd" d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" fill="white"></path> </svg>
+                </span>
+                &nbsp;  
+                BibTex
+            </a>
+        </span>
+        <br>
+        <br>
+      </div>
+</div>
+<br>
+
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
+    <a name="method"></a>
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+      <!-- <h1 class="section-name">Generating <font style="color: red;">Multi-View and Controllable</font> Videos for Autonoumous Driving</h1>
+   -->
+      <video style="margin:auto; right: 0; left: 0; width: 80%; display: block;" controls autoplay muted loop poster="assests/preview.jpeg">
+        <source src="assests/compress_demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+  
+      <p class="section-content-text" style="padding-bottom: 20px;">
+        <!-- <strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames. -->
+        We propose a novel generalist policy for robot control, named <strong>ROSA</strong>, which achieves high success rates across multiple tasks in both RLBench and real-world settings. It also demonstrates strong generalization to unseen tasks.
+    </p>
+    </div>
+  </div>
+  
+<div style="background-color: #fcf7f7; margin-right: auto; margin-left: auto;">
+    <a name="method"></a>
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+        <h1 class="section-name">&#127919;&nbsp;&nbsp; Motivation  &nbsp;&nbsp;&#127919;</h1>
+        <img src="assests/intro.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The spatial and temporal gaps in adapting VLMs to VLAs. </strong>VLMs are pretrained with large-scale VQA datasets to observe current high-level semantics in images, while VLAs are designed to predict low-level future actions in 3D space. The spatial-temporal gap poses challenges to the alignment process and results in data inefficiency in developing VLAs.</p>
+        <!-- <img src="assests/pipeline_inference.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
+      </div>
+</div>
+
+
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
+    <a name="method"></a>
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+        <h1 class="section-name">&#127775;&nbsp;&nbsp; A Novel Training Paradigm &nbsp;&nbsp;&#127775;</h1>
+        <h1 class="section-name" style="font-size: 25px;">Expert Action Data + Robot State Estimation Data</h1>
+        <img src="assests/data.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Two types of data used by ROSA to train VLA models. </strong> (a). Expert action prediction data, which requires human effort to collect. (b). Robot state estimation data, which is obtained automatically without human collection by letting the robot move randomly. ROSA performs joint training using these two types of data.</p>
+        <!-- <img src="assests/framework.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
+      </div>
+</div>
+
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
+    <a name="method"></a>
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+        <h1 class="section-name">&#129302;&nbsp;&nbsp; Architecture &nbsp;&nbsp;&#129302;</h1>
+        <img src="assests/framework.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Overview of the ROSA architecture. </strong> ROSA adopts a classic VLM architecture. Image
+            observations are encoded into image tokens by a vision encoder and a projector. These image tokens
+            are combined with text tokens and fed into an LLM. The model is trained with an autoregressive
+            next-token prediction objective.</p>
+        <!-- <img src="assests/framework.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
+      </div>
+</div>
+
+<div style="background-color: #fcf7f7; margin-right: auto; margin-left: auto;">
+    <a name="method"></a>
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+        <h1 class="section-name">&#128293;&nbsp;&nbsp; Effectiveness Under Different Data Scales &nbsp;&nbsp;&#128293;</h1>
+        <img src="assests/real_scale.png" style="margin:auto; right: 0; left: 0; width: 100%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Performance under varying data scales.
+            </strong> It can be observed that ROSA consistently
+            outperforms the baseline in different data scales, with particularly significant advantages under limited data conditions.</p>
+        <h1 class="section-name">&#128526;&nbsp;&nbsp; Generalization Ability &nbsp;&nbsp;&#128526;</h1>
+        <img src="assests/unseen.png" style="margin:auto; right: 0; left: 0; width: 60%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Performance on unseen tasks. </strong>ROSA's superior performance over the baseline demonstrates its strong generalization capability.</p>      </div>
+</div>
+
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
+    <a name="method"></a>
+    <div class="root-content" style="padding-top: 10px; width: 65%;">
+        <h1 class="section-name">&#127942;&nbsp;&nbsp; Comparasion with Previous Methods &nbsp;&nbsp&#127942;</h1>
+        <img src="assests/compare.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Comparison with previous methods on RLBench. </strong> ROSA outperforms these related methods, highlighting its superior effectiveness.</p>
+        <!-- <img src="assests/rlbench_scale.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
+      </div>
+</div>
+
+<div style="background-color: white; margin-right: auto; margin-left: auto;">
+    <div class="root-content" style="padding-top: 10px; width: 65%; padding-bottom: 10px;">
+        <div>
+            <h1 class="section-name" style="margin-top: 30px; text-align: left; font-size: 25px;">
+                BibTex
+            </h1>
+            <a name="bib"></a>
+            <pre style="margin-top: 5px;" class="bibtex">
+                <code>
+@artical{@misc{wen2025rosaharnessingrobotstates,
+    title={ROSA: Harnessing Robot States for Vision-Language and Action Alignment}, 
+    author={Yuqing Wen and Kefan Gu and Haoxuan Liu and Yucheng Zhao and Tiancai Wang and Haoqiang Fan and Xiaoyan Sun},
+    year={2025},
+    eprint={2506.13679},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO},
+    url={https://arxiv.org/abs/2506.13679}, 
+}
+}</code></pre>
+        </div>
+        <div style="margin-bottom: 0px;">
+            <h1 class="section-name" style="margin-top: 0px; margin-bottom: 10px; text-align: left; font-size: 25px;">
+                Contact
+            </h1>
+            <p class="section-content-text">
+                Feel free to contact us at <strong>wenyuqing AT mail.ustc.edu.cn</strong> or <strong>wangtiancai AT megvii.com</strong>
+        </div>
+    </div>
+</div>
+<div style="background-color: white; margin-right: auto; margin-left: auto; text-align: center; padding-top: 35px; padding-bottom: 35px; position: absolute; left: 0; right: 0;">
+    <!-- <a href="https://www.freecounterstat.com" title="page view counter"><img style="position: relative; margin: auto; left: 0; right: 0;" src="https://counter6.optistats.ovh/private/freecounterstat.php?c=1thh4qucalbdnq4a3txmcutn1emlfswl" border="0" title="page view counter" alt="page view counter"></a> -->
+    <!-- <a href="https://www.freecounterstat.com" title="website counter"><img style="position: relative; margin: auto; left: 0; right: 0;" src="https://counter8.optistats.ovh/private/freecounterstat.php?c=zp91bykc8saafxf9jd2w2rw2zarmwe84" border="0" title="website counter" alt="website counter"></a> -->
+    <a href="https://www.freecounterstat.com" title="web counter"><img style="position: relative; margin: auto; left: 0; right: 0;" src="https://counter1.optistats.ovh/private/freecounterstat.php?c=17hb8c4nryl5pwcns7euls8fcetl1lhu" border="0" title="web counter" alt="web counter"></a>
+    <p>Visitor Count</p>
+</div>
+</body>
+
+<script>
+    window_height =  document.documentElement.clientHeight;
+    video_box = document.getElementById('video-box');
+    title_mask = document.getElementById('title-mask');
+    document.getElementsByTagName
+    imgs = video_box.getElementsByTagName('img');
+    console.log(String(window_height)+'px')
+    video_box.style.height = String(window_height)+'px'
+    title_mask.style.height = String(window_height)+'px'
+    for (i in imgs)
+    {
+        if (i < 64){
+            imgs[i].style.height = String(window_height/4)+'px';
+        }
+    }
+
+var scroll_btn = document.getElementById('scroll-btn');
+    scroll_btn.addEventListener("click",function(){
+        window.scrollTo({top:window_height+30, behavior: 'smooth'});
+    })
+</script>
