@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
-  <title>ROSA: Harnessing Robot States for Vision-Language
-    and Action Alignment</title>
+  <title>LLaDA-VLA: Vision Language Diffusion Action Models</title>
   
   <meta name="author" content="Yuqing Wen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="lamp.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
-  <link rel="icon" type="image/png" href="assests/logo.png">
+  <!-- <link rel="icon" type="image/png" href="assests/logo.png"> -->
 </head>
 
 <body style="width: 100%;">
@@ -20,16 +19,14 @@
     <div class="root-content" style="padding-top: 10px; width: 65%;">
 
         <!-- <img src="assests/logo6.png"  style="position: relative; left: 0em; top: 0.3em; width: 10%;"> -->
-        <h1> <font style="color: rgb(255, 141, 160);">ROSA</font>: Harnessing <font style="color: rgb(255, 141, 160);">Ro</font>bot <font style="color: rgb(255, 141, 160);">S</font>tates for Vision-Language
-            and Action <font style="color: rgb(255, 141, 160);">A</font>lignment</h1>
+        <h1> LLaDA-VLA: Vision Language Diffusion Action Models </h1>
         <!-- <br> -->
         <p style="font-size: 18px; color: black;">
             Yuqing Wen<sup>1*</sup>, &nbsp;&nbsp;
+            Hebei Li<sup>1*</sup>, &nbsp;&nbsp;
             Kefan Gu<sup>2*</sup>, &nbsp;&nbsp;
-            Haoxuan Liu<sup>3*</sup>, &nbsp;&nbsp;
             Yucheng Zhao<sup>3&dagger;</sup>, &nbsp;&nbsp;
             Tiancai Wang<sup>3</sup>, &nbsp;&nbsp;
-            Haoqiang Fan<sup>3</sup> &nbsp;&nbsp;
             Xiaoyan Sun<sup>1&Dagger;</sup>, &nbsp;&nbsp;
 
         </p>
@@ -82,50 +79,32 @@
       <!-- <h1 class="section-name">Generating <font style="color: red;">Multi-View and Controllable</font> Videos for Autonoumous Driving</h1>
    -->
       <video style="margin:auto; right: 0; left: 0; width: 80%; display: block;" controls autoplay muted loop poster="assests/preview.jpeg">
-        <source src="assests/compress_demo.mp4" type="video/mp4">
+        <source src="assests/demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
   
       <p class="section-content-text" style="padding-bottom: 20px;">
         <!-- <strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames. -->
-        We propose a novel generalist policy for robot control, named <strong>ROSA</strong>, which achieves high success rates across multiple tasks in both RLBench and real-world settings. It also demonstrates strong generalization to unseen tasks.
+        We propose the first Vision-Language-Diffusion-Action model
+built upon pretrained diffusion Vision Lanaguage Model, achieving SOTA performance on both simulation and real-world settings and demonstrating strong generalization to unseen tasks.
     </p>
     </div>
   </div>
   
-<div style="background-color: #fcf7f7; margin-right: auto; margin-left: auto;">
-    <a name="method"></a>
-    <div class="root-content" style="padding-top: 10px; width: 65%;">
-        <h1 class="section-name">&#127919;&nbsp;&nbsp; Motivation  &nbsp;&nbsp;&#127919;</h1>
-        <img src="assests/intro.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The spatial and temporal gaps in adapting VLMs to VLAs. </strong>VLMs are pretrained with large-scale VQA datasets to observe current high-level semantics in images, while VLAs are designed to predict low-level future actions in 3D space. The spatial-temporal gap poses challenges to the alignment process and results in data inefficiency in developing VLAs.</p>
-        <!-- <img src="assests/pipeline_inference.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
-      </div>
-</div>
+
+
 
 
 <div style="background-color: white; margin-right: auto; margin-left: auto;">
     <a name="method"></a>
     <div class="root-content" style="padding-top: 10px; width: 65%;">
-        <h1 class="section-name">&#127775;&nbsp;&nbsp; A Novel Training Paradigm &nbsp;&nbsp;&#127775;</h1>
-        <h1 class="section-name" style="font-size: 25px;">Expert Action Data + Robot State Estimation Data</h1>
-        <img src="assests/data.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Two types of data used by ROSA to train VLA models. </strong> (a). Expert action prediction data, which requires human effort to collect. (b). Robot state estimation data, which is obtained automatically without human collection by letting the robot move randomly. ROSA performs joint training using these two types of data.</p>
-        <!-- <img src="assests/framework.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
-      </div>
-</div>
-
-<div style="background-color: white; margin-right: auto; margin-left: auto;">
-    <a name="method"></a>
-    <div class="root-content" style="padding-top: 10px; width: 65%;">
-        <h1 class="section-name">&#129302;&nbsp;&nbsp; Architecture &nbsp;&nbsp;&#129302;</h1>
-        <img src="assests/framework.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Overview of the ROSA architecture. </strong> ROSA adopts a classic VLM architecture. Image
-            observations are encoded into image tokens by a vision encoder and a projector. These image tokens
-            are combined with text tokens and fed into an LLM. The model is trained with an autoregressive
-            next-token prediction objective.</p>
+        <h1 class="section-name">&#129302;&nbsp;&nbsp; Method &nbsp;&nbsp;&#129302;</h1>
+        <img src="assests/method.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Overview of LLaDA-VLA. (a) Overall architecture. Visual features extracted by the vision encoder are projected into the text
+space and concatenated with text tokens. Together with masked tokens, they are fed into a large language diffusion model to generate action
+sequences via Localized Special-Token Classification and further refined with Hierarchical Action-Structured Decoding. (b) Hierarchical
+Action-Structured Decoding strategy. Starting from a fully masked action sequence (except vision and text prompts), the model iteratively
+predicts masked tokens, performing action-level and token-level remasking based on confidence until the full sequence is decoded.</p>
         <!-- <img src="assests/framework.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
         <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
       </div>
@@ -134,26 +113,18 @@
 <div style="background-color: #fcf7f7; margin-right: auto; margin-left: auto;">
     <a name="method"></a>
     <div class="root-content" style="padding-top: 10px; width: 65%;">
-        <h1 class="section-name">&#128293;&nbsp;&nbsp; Effectiveness Under Different Data Scales &nbsp;&nbsp;&#128293;</h1>
-        <img src="assests/real_scale.png" style="margin:auto; right: 0; left: 0; width: 100%; display: inline;">
+        <h1 class="section-name">&#128293;&nbsp;&nbsp; State-Of-The-Art Performance &nbsp;&nbsp;&#128293;</h1>
+        <img src="assests/simpler.jpeg" style="margin:auto; right: 0; left: 0; width: 60%; display: inline;"> <img src="assests/calvin.jpeg" style="margin:auto; right: 0; left: 0; width: 60%; display: inline;">
+        <img src="assests/real.jpeg" style="margin:auto; right: 0; left: 0; width: 100%; display: inline;">
         <p class="section-content-text" style="padding-bottom: 20px;"><strong>Performance under varying data scales.
-            </strong> It can be observed that ROSA consistently
-            outperforms the baseline in different data scales, with particularly significant advantages under limited data conditions.</p>
+            </strong> It can be observed that LLaDA-VLA consistently
+            outperforms previous methods on both SimplerEnv and CALVIN benchmark.</p>
         <h1 class="section-name">&#128526;&nbsp;&nbsp; Generalization Ability &nbsp;&nbsp;&#128526;</h1>
-        <img src="assests/unseen.png" style="margin:auto; right: 0; left: 0; width: 60%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Performance on unseen tasks. </strong>ROSA's superior performance over the baseline demonstrates its strong generalization capability.</p>      </div>
+        <img src="assests/unseen.jpeg" style="margin:auto; right: 0; left: 0; width: 60%; display: inline;">
+        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Performance on unseen tasks. </strong></p>      </div>
 </div>
 
-<div style="background-color: white; margin-right: auto; margin-left: auto;">
-    <a name="method"></a>
-    <div class="root-content" style="padding-top: 10px; width: 65%;">
-        <h1 class="section-name">&#127942;&nbsp;&nbsp; Comparasion with Previous Methods &nbsp;&nbsp&#127942;</h1>
-        <img src="assests/compare.png" style="margin:auto; right: 0; left: 0; width: 90%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>Comparison with previous methods on RLBench. </strong> ROSA outperforms these related methods, highlighting its superior effectiveness.</p>
-        <!-- <img src="assests/rlbench_scale.png" style="margin:auto; right: 0; left: 0; width: 65%; display: inline;">
-        <p class="section-content-text" style="padding-bottom: 20px;"><strong>The two-stage inference pipeline of Panacea.</strong> Its two-stage process begins by creating multi-view images with BEV layouts, followed by using these images, along with subsequent BEV layouts, to facilitate the generation of following frames.</p> -->
-      </div>
-</div>
+
 
 <div style="background-color: white; margin-right: auto; margin-left: auto;">
     <div class="root-content" style="padding-top: 10px; width: 65%; padding-bottom: 10px;">
@@ -164,14 +135,7 @@
             <a name="bib"></a>
             <pre style="margin-top: 5px;" class="bibtex">
                 <code>
-@artical{@misc{wen2025rosaharnessingrobotstates,
-    title={ROSA: Harnessing Robot States for Vision-Language and Action Alignment}, 
-    author={Yuqing Wen and Kefan Gu and Haoxuan Liu and Yucheng Zhao and Tiancai Wang and Haoqiang Fan and Xiaoyan Sun},
-    year={2025},
-    eprint={2506.13679},
-    archivePrefix={arXiv},
-    primaryClass={cs.RO},
-    url={https://arxiv.org/abs/2506.13679}, 
+@artical{ 
 }
 }</code></pre>
         </div>
